@@ -181,11 +181,12 @@ cython_debug/
 /coverage
 
 # next.js
-/.next/
-/out/
+/frontend/.next/
+/frontend//out/
+/frontend/node_modules
 
 # production
-/build
+/frontend//build
 
 # misc
 .DS_Store

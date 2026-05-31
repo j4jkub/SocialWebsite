@@ -25,7 +25,7 @@ Key behaviors include:
 
 ## Why it exists
 
-This project demonstrates how a full-stack application can combine Django and React cleanly:
+This project exists to learn full-stack development and to show my ability to build a polished web experience using Django and React.
 
 - Django handles structured data, models, and backend endpoints
 - React handles component-driven UI, routing, and responsive page updates
@@ -56,17 +56,11 @@ This project demonstrates how a full-stack application can combine Django and Re
 
 - `backend/`
   - Django project configuration and app logic
-  - `posts/` app for managing social post content
 - `frontend/`
   - React source code and component tree
-  - `public/` static app shell and metadata
 
-## Good for
-
-- learning full-stack development with Django + React
-- prototyping social content interfaces
-- exploring separation of backend data and frontend presentation
 
 ## Notes
-
 This repository is focused on demonstrating the app concept and structure rather than production deployment details.
+
+The site is currently a work in progress — incomplete UI and unfinished features.

@@ -1,7 +1,7 @@
-import Post from '../components/post';
-import SearchBar from '../components/searchBar';
-import SideBar from '../components/sideBar';
-import Banner from '../components/banner';
+import Post from '../../components/post';
+import SearchBar from '../../components/searchBar';
+import SideBar from '../../components/sideBar';
+import Banner from '../../components/banner';
 
 import './mainPage.css';
 

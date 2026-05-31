@@ -1,0 +1,64 @@
+.post-details-content{
+    display: block;
+    gap: 20px;
+}
+
+.post-details-page{
+
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comments-section {
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+.comment p {
+    margin: 0;
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.back-button{
+    background: var(--primary-color);
+    align-self: start;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: var(--border-radius);
+}
+
+.back-button:hover {
+    background: var(--secondary-color);
+}

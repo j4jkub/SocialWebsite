@@ -1,0 +1,78 @@
+.modal{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal-content{
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    margin: auto;
+    width: 300px;
+    transform: translate(0, 100%);
+    padding: 50px;
+    text-align: left;
+    outline: 1px solid var(--secondary-color);
+}
+
+.modal-content form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal-content>form input{
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.modal-content>form button{
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    padding-bottom: 8px;
+}
+
+.close-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+.close-icon{
+    width: 16px;
+    height: 16px;
+}
+
+.register-link{
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.register-link a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.register-link a:hover{
+    text-decoration: underline;
+}

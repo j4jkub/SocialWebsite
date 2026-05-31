@@ -62,3 +62,43 @@
 .back-button:hover {
     background: var(--secondary-color);
 }
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--primary-color);
+    padding: 12px;
+    border-radius: var(--border-radius);
+}
+
+.comment-form input, .comment-form textarea {
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    resize: none;
+}
+
+.comment-form button {
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    padding-bottom: 8px;
+    align-self: flex-start;
+}
+
+.comment-form button:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.comment-form-title{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}

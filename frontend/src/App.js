@@ -7,23 +7,25 @@ import AuthModal from './context/authModal';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import {AuthModalProvider} from './context/authModal';
+import RegisterPage from './pages/registerPage/registerPage';
 
 function App() {
   return (
-    <AuthModalProvider>
-      <div className="App">
+    <div className="App">
         <CookieBanner />
         <BrowserRouter>
+        <AuthModalProvider>
           <Routes>
             {/* <MainPage/> */}
             {/* <Route path="/profile/:id" component={ProfilePage} /> */}
             <Route path="/post" element={<PostDetailsPage />} />
             <Route path="/mainPage" element={<MainPage/>} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/" element={<MainPage/>} />
           </Routes>
+          </AuthModalProvider>
         </BrowserRouter>
       </div>
-    </AuthModalProvider>
   );
 }
 

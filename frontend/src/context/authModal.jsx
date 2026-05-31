@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import './authModal.css';
 import closeIcon from '../assets/icons/close-svgrepo-com.svg';
+import { useNavigate } from "react-router";
 
 export const ModalContext = createContext(
     {
@@ -12,12 +13,19 @@ export const ModalContext = createContext(
 );
 
 export function AuthModalProvider({children}) {
+    let navigate = useNavigate();
+
     const [context, setContext] = useState({
         isOpen: false,
         title: "",
         message: "",
         onClose: () => {},
     });
+
+    const onRegisterClick = () => {
+        setContext((prev) => ({ ...prev, isOpen: false }));
+        navigate('/register');
+    }
 
 
     return (
@@ -36,7 +44,7 @@ export function AuthModalProvider({children}) {
                     <input type="text" placeholder="Username" required />
                     <input type="password" placeholder="Password" required />
                     <div className="register-link">
-                        <div> You dont have an account yet? </div> <a href="">register!</a>
+                        <div> You dont have an account yet? </div> <a onClick={() => onRegisterClick()}>register!</a>
                     </div>
                     <div className="modal-disclaimer">
                         This is portfolio project, please dont use real credentials as this is not a secure authentication system.

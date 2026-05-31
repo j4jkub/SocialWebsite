@@ -1,0 +1,19 @@
+.content{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

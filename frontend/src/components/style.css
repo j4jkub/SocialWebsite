@@ -5,18 +5,34 @@
     text-align: left;
 }
 
+.banner-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-left: 20px;
+}
+
 .banner{
-    /* padding: 10px 20px; */
     margin-bottom: 20px;
     display: flex;
     width: 100vw;
     align-items: center;
     background-color: var(--primary-color);
-    /* flex-direction: row; */
+    z-index: 1000;
 }
 
 .banner-button{
     border-radius: var(--border-radius);
+    border: none;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.banner-button:hover{
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 .banner-buttons{
@@ -27,12 +43,38 @@
     margin-right: 20px;
 }
 
+.hamburger-menu{
+    display: none;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    font-size: 24px;
+}
+
+.hamburger-menu:hover{
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
 .sidebar{
     background-color: var(--primary-color);
     border-radius: var(--border-radius);
     padding: 20px;
     align-self: start;
     text-align: left;
+    z-index: 999;
+}
+
+.side-bar-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
 }
 
 .search-bar{
@@ -58,8 +100,8 @@
     border-radius: var(--border-radius);
     border: none;
     background-color: var(--background-color);
-    /* border: 1px solid var(--primary-color); */
     color: var(--text-color);
+    touch-action: none;
 }
 
 .search-input:focus{
@@ -74,11 +116,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* width: 50%; */
     background-color: var(--background-color);
     border-radius: var(--border-radius);
     border: 1px solid var(--primary-color);
-    /* padding: 10px; */
     text-align: left;
     overflow: hidden;
 }
@@ -99,7 +139,6 @@
 }
 
 .clear-search-icon{
-    /* width: 18px; */
     height: 18px;
 }
 
@@ -142,7 +181,6 @@
     border-radius: var(--border-radius);
     display: flex;
     padding: 8px 8px;
-    /* margin-right: 10px; */
 }   
 
 .post-action:hover{
@@ -164,6 +202,7 @@
     display: flex;
     padding: 5px 10px;
     margin-top: 10px;
+    z-index: 10;
 }
 
 .comment .like-button:hover{
@@ -228,5 +267,89 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    border: 1px solid var(--secondary-color);
+    -webkit-transform: translateZ(50%);
+    z-index: 1000;
+}
+.accept-button{
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    padding-bottom: 8px;
+}
+.accept-button:hover{
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
+.mobile-side-bar{
+    /* position: relative; */
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-side-bar-content{
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 20px;
+    background-color: var(--primary-color);
+    padding: 20px;
+    width: 70vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.mobile-side-bar-background{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 100%;
+        margin-top: 70px;
+    }
+    .side-bar {
+        height: 0;
+        width: 0;
+        display: none;
+    }
+    .side-bar-content{
+        height: 100%;
+    }
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+    }
+    .cookie-banner{
+        width: 85vw;
+    }
+    .banner{
+        position: fixed;   
+    }
+}
+
+.disabled {
+    display: none;
+    width: 0%;
+    opacity: 0;
+}

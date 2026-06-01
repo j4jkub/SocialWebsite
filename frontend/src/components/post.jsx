@@ -10,7 +10,7 @@ export default function Post({ post }) {
   const {context, setContext} = useContext(ModalContext);
 
   const OnUpvote = () => {
-    setContext((prev) => ({ ...prev, isOpen: true }));
+    setContext((prev) => ({ ...prev, isOpen: true, title: "To like post you need to be logged in" }));
   }
 
   return (

@@ -12,14 +12,6 @@
     text-align: left;
 }
 
-.main-content{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 60vw;
-    margin: 0 auto;
-}
-
 .posts{
     display: flex;
     flex-direction: column;

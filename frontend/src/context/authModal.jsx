@@ -39,7 +39,7 @@ export function AuthModalProvider({children}) {
                     <button className="close-button" onClick={() => setContext((prev) => ({ ...prev, isOpen: false }))}>
                         <img src={closeIcon} alt="Close" className="close-icon" />
                     </button>
-                    <h3>Authentication Required</h3>
+                    <h3>{context.title}</h3>
                     <form>
                     <input type="text" placeholder="Username" required />
                     <input type="password" placeholder="Password" required />

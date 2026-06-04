@@ -44,6 +44,8 @@ backend/*.egg-info/
 backend/.installed.cfg
 backend/*.egg
 backend/MANIFEST
+migrations
+__pycache__
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

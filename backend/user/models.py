@@ -8,7 +8,7 @@ class UserProfile(models.Model):
     profile_picture = models.ImageField(upload_to='media/profile_pictures/', blank=True)
 
     def __str__(self):
-        return self.username
+        return self.user.username
     
 
 class Follow(models.Model):

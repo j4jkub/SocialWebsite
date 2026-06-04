@@ -18,20 +18,26 @@ export default function Banner() {
     navigate('/register');
   }
 
+  const onLogoClick = () => {
+    navigate('/');
+  }
 
   return (
-    <div className="banner">
-        <h1 className="banner-title">Social Website</h1>
-        <div className="banner-buttons">
-            <button className="banner-button" onClick={onLoginClick}>
-                Log In
-            </button>
-            <button className="banner-button" onClick={onRegisterClick}>
-                Sign Up
-            </button>
-        </div>
-        <MobileSideBar />
-        <hr/>
-    </div>
+    <>
+      <div className="banner">
+          <h1 className="banner-title" onClick={onLogoClick}>
+              Social Website
+          </h1>
+          <div className="banner-buttons">
+              <button className="banner-button" onClick={onLoginClick}>
+                  Log In
+              </button>
+              <button className="banner-button" onClick={onRegisterClick}>
+                  Sign Up
+              </button>
+          </div>
+          <MobileSideBar />
+      </div>
+    </>
   );
 }

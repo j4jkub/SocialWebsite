@@ -5,11 +5,24 @@
     text-align: left;
 }
 
+.post-title{
+    margin: 0;
+    cursor: pointer;
+}
+
 .banner-title{
     font-size: 24px;
     font-weight: bold;
     color: var(--text-color);
     margin-left: 20px;
+    cursor: pointer;
+}
+
+.banner-hr{
+    margin: 0;
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid var(--secondary-color);
 }
 
 .banner{
@@ -19,6 +32,7 @@
     align-items: center;
     background-color: var(--primary-color);
     z-index: 1000;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 .banner-button{
@@ -55,7 +69,6 @@
 }
 
 .hamburger-menu:hover{
-    background-color: var(--text-color);
     color: var(--background-color);
 }
 
@@ -69,12 +82,17 @@
 }
 
 .side-bar-content{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     gap: 20px;
     background-color: var(--primary-color);
     padding: 20px;
     border-radius: var(--border-radius);
+}
+
+.side-bar-tags{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .search-bar{
@@ -339,12 +357,15 @@
         align-items: center;
         cursor: pointer;
         position: relative;
+        line-height: 11px;
+        font-size: 44px;
     }
     .cookie-banner{
         width: 85vw;
     }
     .banner{
         position: fixed;   
+        top: 0;
     }
 }
 

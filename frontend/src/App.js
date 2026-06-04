@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import {AuthModalProvider} from './context/authModal';
 import RegisterPage from './pages/registerPage/registerPage';
+import CreatePostPage from './pages/createPostPage/createPostPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/post" element={<PostDetailsPage />} />
             <Route path="/mainPage" element={<MainPage/>} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/create-post" element={<CreatePostPage />} />
             <Route path="/" element={<MainPage/>} />
           </Routes>
           </AuthModalProvider>

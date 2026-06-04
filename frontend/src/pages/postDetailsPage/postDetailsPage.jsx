@@ -7,10 +7,18 @@ import'./postDetailsPage.css';
 import backIcon from '../../assets/icons/arrow-left-svgrepo-com.svg';
 import Comment from '../../components/comment';
 import {useNavigate} from 'react-router-dom';
-
+import {AuthModalProvider, ModalContext} from '../../context/authModal';
+import { useContext } from 'react';
 
 export default function PostDetailsPage() {
     let navigate = useNavigate();
+    const {context, setContext} = useContext(ModalContext);
+
+    const onCommentSubmit = (e) => {
+        e.preventDefault();
+        setContext((prev) => ({ ...prev, isOpen: true, title: "To comment on post you need to be logged in" }));
+    }
+
     return (
         <div className="post-details-page">
             <Banner />
@@ -27,7 +35,9 @@ export default function PostDetailsPage() {
                             <form className="comment-form">
                                 <p className="comment-form-title">Leave a Comment</p>
                                 <textarea placeholder="Write a comment..." />
-                                <button type="submit">Post Comment</button>
+                                <button type="submit" onClick={onCommentSubmit}>
+                                    Post Comment
+                                </button>
                             </form>
                             <Comment comment={{ author: 'User1', text: 'This is a comment on the first post.' }} />
                             <Comment comment={{ author: 'User2', text: 'This is another comment.' }} />

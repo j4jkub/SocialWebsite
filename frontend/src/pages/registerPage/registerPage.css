@@ -2,19 +2,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vw;
+    width: 60vw;
+    /* max-width: 40vw; */
     background-color: var(--primary-color);
     margin: 0 auto;
     border-radius: var(--border-radius);
     border: 1px solid var(--secondary-color);
     flex-direction: column;
-    justify-content: flex-start;
     padding: 20px;
+}
+
+.form-label{
+    font-size: 14px;
+    color: var(--text-color);
+    text-align: left;
+
 }
 
 @media (max-width: 768px) {
     .register-form-container {
         width: 90vw;
+        margin-top: 100px;
+        width: 70vw;
     }
 }
 
@@ -28,10 +37,13 @@
 .register-form-container form{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     padding: 50px;
     width: 100%;
 }
+
+.register-form-container form>.form-label{
+    text-transform: capitalize;}
 
 .register-form-container form input{
     padding: 10px;

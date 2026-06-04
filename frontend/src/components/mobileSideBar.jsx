@@ -1,3 +1,5 @@
+import SideBarContent from './sideBarContent';
+
 export default function MobileSideBar() {
     const OpenMenu = () => {
         const menu = document.querySelector('.mobile-side-bar-background');
@@ -24,8 +26,7 @@ export default function MobileSideBar() {
             </button>
             <div className="mobile-side-bar-background disabled" onClick={CloseMenu}></div>
                 <div className="mobile-side-bar-content disabled">
-                    <h2>Mobile Side Bar</h2>
-                    <p>This is the mobile side bar content.</p>
+                    <SideBarContent />
                 </div>
         </div>
     );

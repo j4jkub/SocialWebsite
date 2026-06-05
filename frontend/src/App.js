@@ -19,8 +19,8 @@ function App() {
           <Routes>
             {/* <MainPage/> */}
             {/* <Route path="/profile/:id" component={ProfilePage} /> */}
-            <Route path="/post" element={<PostDetailsPage />} />
-            <Route path="/mainPage" element={<MainPage/>} />
+            <Route path="/post/:postId" element={<PostDetailsPage />} />
+            <Route path="/main-page" element={<MainPage/>} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/create-post" element={<CreatePostPage />} />
             <Route path="/" element={<MainPage/>} />

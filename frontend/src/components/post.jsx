@@ -16,7 +16,7 @@ export default function Post({ post }) {
   }
 
   const OnPostClick = () => {
-    navigate(`/post`);
+    navigate(`/post/${post.id}`);
   }
 
   return (

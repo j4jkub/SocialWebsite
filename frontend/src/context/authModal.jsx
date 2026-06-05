@@ -31,7 +31,7 @@ export function AuthModalProvider({children}) {
     const Login = (username, password) => {
         // navigate('/mainPage');
         console.log("Logging in with:", { username, password });
-        setContext((prev) => ({ ...prev, isOpen: false, onClose: () => {}, title: "Login" }));
+        setContext((prev) => ({ ...prev, isOpen: false, onClose: () => {} }));
     }
 
     const Logout = () => {

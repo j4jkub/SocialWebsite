@@ -20,11 +20,23 @@ export function AuthModalProvider({children}) {
         title: "",
         message: "",
         onClose: () => {},
+        Logout: () => {Logout()},
     });
 
     const onRegisterClick = () => {
         setContext((prev) => ({ ...prev, isOpen: false }));
         navigate('/register');
+    }
+
+    const Login = (username, password) => {
+        // navigate('/mainPage');
+        console.log("Logging in with:", { username, password });
+        setContext((prev) => ({ ...prev, isOpen: false, onClose: () => {}, title: "Login" }));
+    }
+
+    const Logout = () => {
+        console.log("Logging out");
+        setContext((prev) => ({ ...prev, isOpen: false, onClose: () => {} }));
     }
 
 
@@ -40,7 +52,7 @@ export function AuthModalProvider({children}) {
                         <img src={closeIcon} alt="Close" className="close-icon" />
                     </button>
                     <h3>{context.title}</h3>
-                    <form>
+                    <form onSubmit={(e) => { e.preventDefault(); Login(e.target[0].value, e.target[1].value) }}>
                     <input type="text" placeholder="Username" required />
                     <input type="password" placeholder="Password" required />
                     <div className="register-link">

@@ -7,7 +7,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'posts', PostViewSet)
 router.register(r'comments', CommentViewSet)
-router.register(r'user', UserProfileSerializer)
+router.register(r'user', UserProfileSerializer, basename='UserProfile')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

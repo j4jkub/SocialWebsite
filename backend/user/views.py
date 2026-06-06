@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django_filters import rest_framework as django_filters
 from .models import UserProfile
+from .filters import UserFilter
 from .serializers import UserProfileSerializer
 from rest_framework import viewsets
 

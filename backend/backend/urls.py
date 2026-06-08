@@ -9,7 +9,7 @@ from django.conf import settings
 router = routers.DefaultRouter()
 router.register(r'posts', PostViewSet)
 router.register(r'comments', CommentViewSet)
-router.register(r'user', UserProfileViewSet, basename='UserProfile')
+router.register(r'user', UserProfileViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

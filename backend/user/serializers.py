@@ -9,13 +9,13 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username']
+        fields = ['id', 'username']
 
 class UserProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = UserProfile
-        fields = ['user', 'bio', 'profile_picture']
+        fields = ['id', 'user', 'bio', 'profile_picture']
 
 class FollowSerializer(serializers.ModelSerializer):
     class Meta:

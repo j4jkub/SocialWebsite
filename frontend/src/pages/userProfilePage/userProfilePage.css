@@ -1,0 +1,40 @@
+.user-proffile{
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    margin: 0 auto;
+    max-width: 60vh;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 12px;
+    border: 1px solid var(--secondary-color);
+}
+
+    
+    
+.user-profile-picture{
+    width: 128px;
+    height: 128px;
+}
+
+.user-profile-username{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.user-prifile-bio{
+    text-align: left;
+}
+
+.follow-button-container{
+    display: flex;
+}
+
+.user-content-button{
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    padding: 8px 12px; 
+}

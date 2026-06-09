@@ -12,7 +12,7 @@ export default function MainPage() {
     const [nextPage, setNextPage] = useState("");
 
     useEffect(() => {
-        axios.get('http://localhost:8000/posts/')
+        axios.get('http://localhost:8000/api/posts/')
             .then(response => {
                 console.log("Fetched posts:", response.data);
                 setPosts(response.data.results);

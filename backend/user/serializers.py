@@ -3,7 +3,6 @@ from .models import Follow, UserProfile
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-
 #TODO add follow count to serializer
 
 class UserSerializer(serializers.ModelSerializer):

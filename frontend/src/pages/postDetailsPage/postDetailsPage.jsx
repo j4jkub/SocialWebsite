@@ -24,7 +24,7 @@ export default function PostDetailsPage() {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/posts/${postId}/`)
+        axios.get(`http://localhost:8000/api/posts/${postId}/`)
             .then(response => {
                 // console.log("Fetched posts:", response.data);
                 setPost(response.data);
@@ -37,7 +37,7 @@ export default function PostDetailsPage() {
 
     useEffect(() => {
         if(post == null) return
-        axios.get(`http://localhost:8000/comments/?post_id=${post.author}`)
+        axios.get(`http://localhost:8000/api/comments/?post_id=${post.author}`)
             .then(response => {
                 // console.log("Fetched comments:", response.data);
                 setComments(response.data.results);

@@ -10,10 +10,9 @@ import axios from "axios";
 export default function UserProfilePage(){
     let {userId} = useParams();
     const [userProfile, setUserProfile] = useState({});
-    const [user, setUser] = useState({});
-
+    const [user, setUser] = useState({}); 
     useEffect(() =>{
-        axios.get(`http://localhost:8000/user/${userId}/`)
+        axios.get(`http://localhost:8000/api/user/${userId}/`)
         .then(response => {
             console.log("Fetched user:", response.data);
             console.log("Fetched user:", response.data.user);

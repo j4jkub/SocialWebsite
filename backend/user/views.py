@@ -7,6 +7,8 @@ from rest_framework import viewsets, status
 from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.permissions import AllowAny
+
 
 # Create your views here.
 class UserProfileViewSet(viewsets.ModelViewSet):
@@ -16,6 +18,7 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
 
 class RegisterView(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
 

@@ -24,7 +24,7 @@ export function AuthProvider({children}) {
 
         axios.post('http://localhost:8000/api/token/', bodyParameters)
             .then(response => {
-                // console.log("Tokens:", response.data);
+                // console.log("Tokens:", response.data); 
                 setRefreshToken(response.data.refresh)
                 setToken(response.data.token)
             })

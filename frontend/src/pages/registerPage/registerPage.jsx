@@ -18,14 +18,16 @@ export default function RegisterPage() {
             "username": e.target.elements.username.value,
             "email": e.target.elements.email.value,
             "password": e.target.elements.password.value,
-            "password": e.target.elements.confirmPassword.value,
+            // "password": e.target.elements.confirmPassword.value,
         };
 
         axios.post("http://localhost:8000/api/register/", bodyParameters).then( response =>{
-                console.log(response)
                 setError("")
             }
-        )
+        ).catch( error => {
+            // setError(error)
+            console.log(error)
+        })
     } 
 
     return (
@@ -48,10 +50,11 @@ export default function RegisterPage() {
                     <div className="form-label">confirm password</div>
                     <input className="register-input" type="password" placeholder="Confirm Password" name="confirmPassword" required />
 
+                    <div className='error-message'>{error}</div>
+
                     <div className="disclaimer">
                         <p>Do not use real credentials. this is for demonstration purposes only.</p>
                     </div>
-                    <div>{error}</div>
                     <button className="register-button" type="submit">Register</button>
                 </form>
 

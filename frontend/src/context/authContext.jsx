@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import './authModal.css';
 import closeIcon from '../assets/icons/close-svgrepo-com.svg';
 import { useNavigate } from "react-router";
@@ -24,14 +24,33 @@ export function AuthProvider({children}) {
 
         axios.post('http://localhost:8000/api/token/', bodyParameters)
             .then(response => {
-                // console.log("Tokens:", response.data); 
+                console.log("Tokens:", response.data); 
+                setToken(response.data.access)
                 setRefreshToken(response.data.refresh)
-                setToken(response.data.token)
             })
             .catch(error => {
                 console.error("Error logging in:", error);
             });
     }
+
+    useEffect(() => {
+        console.log(token)
+        const config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+
+        const bodyParameters = {
+        };
+
+        axios.post('http://localhost:8000/api/user_data/', config)
+            .then(response => {
+                console.log("user:", response.data); 
+            })
+            .catch(error => {
+                console.error("Error logging in:", error);
+            });
+    }, [token])
+
 
     const logout = () => {
 

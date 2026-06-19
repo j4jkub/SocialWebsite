@@ -3,18 +3,19 @@ from .models import Follow, UserProfile
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-#TODO add follow count to serializer
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username']
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    # user = UserSerializer()
     class Meta:
         model = UserProfile
-        fields = ['id', 'user', 'bio', 'profile_picture']
+        fields = ['bio', 'profile_picture']
+
+class UserSerializer(serializers.ModelSerializer):
+    # user_profile = serializers.RelatedField('UserProfile_set')
+    user_profile = UserProfileSerializer()
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'user_profile']
 
 class FollowSerializer(serializers.ModelSerializer):
     class Meta:

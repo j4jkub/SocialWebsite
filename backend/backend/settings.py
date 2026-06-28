@@ -48,7 +48,8 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",
+        # 'rest_framework_api_key.permissions.HasAPIKey',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 16,
@@ -61,7 +62,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT={
-    'ACCES_TOKEN_LIFETIME': timedelta(hours=2),
+    'ACCESs_TOKEN_LIFETIME': timedelta(hours=2),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     # 'SIGNING_KEY'  : SECRET_KEY,
     'AUTH_HEADER_TYPES' : ("Bearer",),

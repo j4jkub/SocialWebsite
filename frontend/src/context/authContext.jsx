@@ -34,17 +34,14 @@ export function AuthProvider({children}) {
     }
 
     useEffect(() => {
-        console.log(token)
         const config = {
             headers: { Authorization: `Bearer ${token}` }
         };
 
-        const bodyParameters = {
-        };
-
-        axios.post('http://localhost:8000/api/user_data/', config)
+        axios.get('http://localhost:8000/api/user_data/', config)
             .then(response => {
                 console.log("user:", response.data); 
+                setUser(response.data)
             })
             .catch(error => {
                 console.error("Error logging in:", error);
@@ -53,7 +50,9 @@ export function AuthProvider({children}) {
 
 
     const logout = () => {
-
+        setUser({});
+        setToken({});
+        setRefreshToken({});
     }
 
 
@@ -62,6 +61,7 @@ export function AuthProvider({children}) {
             {
                 Login : login,
                 Logout : logout,
+                User : user,
                 Token : token,
                 RefreshToken : refreshToken
             }}>
